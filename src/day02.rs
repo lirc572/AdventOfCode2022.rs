@@ -40,7 +40,7 @@ fn rps_infer_move(move_opponent: &RpsMove, outcome: &RpsOutcome) -> RpsMove {
     }
 }
 
-pub fn soln01() {
+pub fn soln01() -> i32 {
     let input = fs::read_to_string("inputs/day02/input.txt").expect("Unable to read file");
     let mut score = 0;
     for line in input.lines() {
@@ -69,9 +69,10 @@ pub fn soln01() {
         };
     }
     println!("Answer: {}", score);
+    score
 }
 
-pub fn soln02() {
+pub fn soln02() -> i32 {
     let input = fs::read_to_string("inputs/day02/input.txt").expect("Unable to read file");
     let mut score = 0;
     for line in input.lines() {
@@ -101,4 +102,20 @@ pub fn soln02() {
         };
     }
     println!("Answer: {}", score);
+    score
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_soln01() {
+        assert_eq!(soln01(), 13682);
+    }
+
+    #[test]
+    fn test_soln02() {
+        assert_eq!(soln02(), 12881);
+    }
 }
