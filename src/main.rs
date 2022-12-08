@@ -8,7 +8,7 @@ fn run_fn<T>(f: fn() -> T) {
 fn main() {
     let mut args = std::env::args();
     if args.len() == 1 {
-        println!("Usage: {} ddpp (where dd is day number and pp is problem number)", args.next());
+        println!("Usage: {} ddpp (where dd is day number and pp is problem number)", args.next().unwrap());
         return;
     }
     args.for_each(|arg| {
