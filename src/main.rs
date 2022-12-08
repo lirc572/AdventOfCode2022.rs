@@ -6,12 +6,12 @@ fn run_fn<T>(f: fn() -> T) {
 }
 
 fn main() {
-    let args = std::env::args();
+    let mut args = std::env::args();
     if args.len() == 1 {
-        println!("Usage: cargo run -- ddpp (where dd is day number and pp is problem number)");
+        println!("Usage: {} ddpp (where dd is day number and pp is problem number)", args.next());
         return;
     }
-    args.skip(1).for_each(|arg| {
+    args.for_each(|arg| {
         match arg.as_str() {
             "0101" => run_fn(day01::soln01),
             "0102" => run_fn(day01::soln02),
