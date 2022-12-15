@@ -1,5 +1,4 @@
-mod day01;
-mod day02;
+use advent_of_code_2022::*;
 
 fn run_fn<T>(f: fn() -> T) {
     f();
